@@ -1,0 +1,68 @@
+	/* Coded with love by Mutiullah Samim */
+	
+	.container {
+	    height: 100vh;
+	    flex-wrap: wrap;
+	    align-content: center;
+	}
+	
+	.user_card {
+	    height: 420px;
+	    width: 350px;
+	    margin-top: 45%;
+	    margin-bottom: auto;
+	    background: var(--main-bg-color);
+	    position: relative;
+	    display: flex;
+	    justify-content: center;
+	    flex-direction: column;
+	    padding: 10px;
+	    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	    border-radius: 5px;
+	    color: var(--second-color);
+	}
+	
+	.brand_logo_container {
+	    position: absolute;
+	    height: 170px;
+	    width: 170px;
+	    top: -75px;
+	    border-radius: 50%;
+	    background: var(--primary-color);
+	    text-align: center;
+	}
+	
+	.brand_logo {
+	    font-size: 7rem;
+	    color: var(--main-bg-color);
+	}
+	
+	.form_container {
+	    margin-top: 100px;
+	}
+	
+	.input-group-text {
+	    background: var(--primary-color)!important;
+	    color: var(--second-color) !important;
+	    border: 0 !important;
+	    border-radius: 0.25rem 0 0 0.25rem !important;
+	}
+	
+	.input_user,
+	.input_pass {
+	    background-color: var(--second-color);
+	}
+	
+	.custom-control {
+	    color: var(--second-color) !important;
+	}
+	
+	.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+	    background: var(--primary-color)!important;
+	}
+	
+	.d-flex {
+	    justify-content: space-around;
+	}

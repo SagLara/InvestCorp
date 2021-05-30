@@ -1,0 +1,40 @@
+<div class="container d-flex justify-content-center">
+    <div class="d-flex flex-column justify-content-between">
+        <div class="card mt-2 p-5">
+            <div class="logo mb-2"><i class="bi bi-emoji-sunglasses-fill big-icon"></i></div>
+            <div>
+                <h3 class="mb-1">Empieza a manejar tu</h3>
+                <h4 class="mb-3 ">dinero con nosotros!</h4>
+            </div>
+            <button class="btn btn-main btn-lg mb-4" routerLink="/login"><small>¿Ya tienes una cuenta?</small><span>&nbsp;Login</span> </button>
+        </div>
+        <div class="card two px-5 py-4 mb-3">
+            <div class="form-group mt-2">
+                <input type="text" class="form-control " id="mail" required>
+                <label class="form-control-placeholder " for="mail">Correo Electronico</label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" required>
+                <label class="form-control-placeholder" for="name">Nombre completo</label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="user" required>
+                <label class="form-control-placeholder" for="user">Usuario</label>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" required>
+                <label class="form-control-placeholder" for="password">Contraseña</label>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="validPass" required>
+                <label class="form-control-placeholder" for="validPass">Repetir Contraseña</label>
+            </div>
+            <button class="btn btn-bg btn-block btn-lg mt-1 mb-2">
+                <span>Empezar<i class="bi bi-cursor-fill ml-2"></i></span>
+            </button>
+            <button class="btn btn-back btn-sm mt-1 mb-1" routerLink="/home">
+                <i class="bi bi-arrow-return-left mr-2"></i><span>Inicio</span>
+            </button>
+        </div>
+    </div>
+</div>
