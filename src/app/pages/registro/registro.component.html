@@ -1,40 +1,98 @@
 <div class="container d-flex justify-content-center">
-    <div class="d-flex flex-column justify-content-between">
-        <div class="card mt-2 p-5">
-            <div class="logo mb-2"><i class="bi bi-emoji-sunglasses-fill big-icon"></i></div>
-            <div>
-                <h3 class="mb-1">Empieza a manejar tu</h3>
-                <h4 class="mb-3 ">dinero con nosotros!</h4>
+    <div class="d-flex flex-row justify-content-between">
+        <div class="registro">
+            <div class="card mt-3 p-5">
+                <div class="logo mb-2"><i class="bi bi-person-badge-fill big-icon"></i></div>
+                <div>
+                    <h3 class="mb-1">Formulario de registro</h3>
+                    <h4 class="mb-4">Por favor diligencia los <br> campos a continuación</h4>
+                </div>
             </div>
-            <button class="btn btn-main btn-lg mb-4" routerLink="/login"><small>¿Ya tienes una cuenta?</small><span>&nbsp;Login</span> </button>
+            <div class="card two px-4 py-3">
+                <form [formGroup]="formRegistro">
+                    <div class="form-group mt-2">
+                        <input type="text" class="form-control " formControlName="nombres" id="nombres" required>
+                        <label class="form-control-placeholder " for="nombres">Nombres</label>
+                    </div>
+                    <div class="form-group mt-n2">
+                        <input type="text" class="form-control" formControlName="apellidos" id="apellidos" required>
+                        <label class="form-control-placeholder" for="apellidos">Apellidos</label>
+                    </div>
+                    <div class="form-group mt-n2 mb-n1">
+                        <input type="text" class="form-control" formControlName="documento" id="documento" required>
+                        <label class="form-control-placeholder" for="documento">No. de Documento</label>
+                    </div>
+                    <div class="form-group mt-n2">
+                        <label class="mt-3 mb-n1" for="fechaNacimiento">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control mt-n2" formControlName="fechaNacimiento" id="fechaNacimiento" required>
+
+                    </div>
+                    <div class="form-group mt-n2">
+                        <input type="number" class="form-control" formControlName="telefono" id="telefono" required>
+                        <label class="form-control-placeholder" for="telefono">Teléfono (Celular)</label>
+                    </div>
+                    <div class="form-group mt-n2">
+                        <input type="text" class="form-control " formControlName="mail" id="mail" required>
+                        <label class="form-control-placeholder " for="mail">Correo Electronico</label>
+                    </div>
+                    <div class="form-group mt-n2">
+                        <input type="text" class="form-control " formControlName="pais" id="pais" required>
+                        <label class="form-control-placeholder " for="pais">País</label>
+                    </div>
+                    <div class="form-group mt-n2">
+                        <input type="text" class="form-control " formControlName="ciudad" id="ciudad" required>
+                        <label class="form-control-placeholder " for="ciudad">Ciudad</label>
+                    </div>
+                    <button class="btn btn-back btn-block btn-sm mt-n3" routerLink="/home">
+                    <i class="bi bi-arrow-return-left mr-2"></i><span>Inicio</span>
+                </button>
+                </form>
+            </div>
         </div>
-        <div class="card two px-5 py-4 mb-3">
-            <div class="form-group mt-2">
-                <input type="text" class="form-control " id="mail" required>
-                <label class="form-control-placeholder " for="mail">Correo Electronico</label>
+        <div class="registro">
+            <div class="card mt-3 p-5">
+                <div class="logo mb-2"><i class="bi bi-emoji-sunglasses-fill big-icon"></i></div>
+                <div>
+                    <h3 class="mb-1">Empieza a manejar tu</h3>
+                    <h4 class="mb-3">dinero con nosotros!</h4>
+                </div>
+                <button class="btn btn-main btn-sm mb-5" routerLink="/login"><small>¿Ya tienes una cuenta?</small><span>&nbsp;Login</span> </button>
             </div>
-            <div class="form-group">
-                <input type="text" class="form-control" id="name" required>
-                <label class="form-control-placeholder" for="name">Nombre completo</label>
+            <div class="card two px-4 py-3">
+                <form [formGroup]="formRegistro">
+                    <div class="form-group mt-2">
+                        <input type="text" class="form-control" formControlName="userName" id="userName" required>
+                        <label class="form-control-placeholder" for="userName">Usuario</label>
+                    </div>
+                    <div class="form-group mt-n1">
+                        <input type="password" class="form-control" formControlName="password" id="password" required>
+                        <label class="form-control-placeholder" for="password">Contraseña</label>
+                    </div>
+                    <div class="form-group mt-n1">
+                        <input type="password" class="form-control " formControlName="validPass" id="validPass" required>
+                        <label class="form-control-placeholder " for="validPass">Repetir Contraseña</label>
+                    </div>
+                    <div class="form-group mt-n1">
+                        <input type="number" class="form-control" formControlName="capitalInicial" id="capitalInicial" required>
+                        <label class="form-control-placeholder" for="capitalInicial">Capital Inicial - Cantidad invertida</label>
+                    </div>
+                    <div class="form-group mt-n1">
+                        <input type="text" class="form-control " formControlName="direccion" id="direccion" required>
+                        <label class="form-control-placeholder " for="direccion">Dirección</label>
+                    </div>
+                    <div class="form-group mt-n1">
+                        <input type="text" class="form-control" formControlName="codigoPostal" id="codigoPostal" required>
+                        <label class="form-control-placeholder" for="codigoPostal">Codigo Postal</label>
+                    </div>
+                    <div class="form-group mt-n1">
+                        <input type="text" class="form-control " formControlName="referido" id="referido" required>
+                        <label class="form-control-placeholder " for="referido">Link de Referido</label>
+                    </div>
+                    <button class="btn btn-bg btn-block btn-lg mt-1 mb-2">
+                        <span>Registrar<i class="bi bi-cursor-fill ml-2"></i></span>
+                    </button>
+                </form>
             </div>
-            <div class="form-group">
-                <input type="text" class="form-control" id="user" required>
-                <label class="form-control-placeholder" for="user">Usuario</label>
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" id="password" required>
-                <label class="form-control-placeholder" for="password">Contraseña</label>
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" id="validPass" required>
-                <label class="form-control-placeholder" for="validPass">Repetir Contraseña</label>
-            </div>
-            <button class="btn btn-bg btn-block btn-lg mt-1 mb-2">
-                <span>Empezar<i class="bi bi-cursor-fill ml-2"></i></span>
-            </button>
-            <button class="btn btn-back btn-sm mt-1 mb-1" routerLink="/home">
-                <i class="bi bi-arrow-return-left mr-2"></i><span>Inicio</span>
-            </button>
         </div>
     </div>
 </div>
