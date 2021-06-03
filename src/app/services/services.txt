@@ -1,1 +1,0 @@
-servicos de consulta a la api para obtener informacion
