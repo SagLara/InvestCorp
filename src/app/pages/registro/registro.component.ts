@@ -40,4 +40,10 @@ export class RegistroComponent implements OnInit {
     });
   }
 
+
+  registro(){
+    console.log(this.formRegistro.value);
+    
+  }
+
 }
