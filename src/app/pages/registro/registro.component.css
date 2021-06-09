@@ -10,7 +10,7 @@
     height: 35%;
     color: var(--nav-color);
     background-color: var(--main-bg-color);
-    margin-top: -40px;
+    margin-top: -44px;
 }
 
 .container {
@@ -23,10 +23,10 @@ h3 {
 
 .two {
     height: 65%;
-    background-color: var(--second-color);
-    border: 1.5px solid var(--second-color);
-    border-top-right-radius: 10%;
-    border-top-left-radius: 10%;
+    background-color: var(--nav-color);
+    border: 1.5px solid var(--nav-color);
+    border-top-right-radius: 9%;
+    border-top-left-radius: 9%;
 }
 
 .btn-main {
@@ -39,6 +39,7 @@ h3 {
     outline: 0;
     border-bottom: 1.5px solid var(--main-bg-color);
     background-color: transparent;
+    color: whitesmoke;
 }
 
 .form-control:focus {
@@ -53,9 +54,16 @@ h3 {
     top: 14px;
     left: 2px;
     transition: all 200ms;
-    opacity: 0.5;
+    opacity: 0.7;
     font-size: 100%;
-    color: var(--main-bg-color);
+    font-weight: 500;
+    color: var(--second-bg-color);
+}
+
+.form-control-alone {
+    font-size: 100%;
+    font-weight: 600;
+    color: var(--second-bg-color);
 }
 
 .form-control:focus+.form-control-placeholder,
@@ -64,7 +72,8 @@ h3 {
     transform: translate3d(0, -140%, 0);
     opacity: 1;
     top: 14px;
-    color: var(--main-bg-color);
+    font-weight: 600;
+    color: var(--second-bg-color);
 }
 
 @media (max-width: 1000px) {
