@@ -1,14 +1,14 @@
 .site-header {
-    background-color: var(--main-bg-color);
+  background-color: var(--main-bg-color);
 }
 
 .container {
-    color: var(--second-color);
+  color: var(--second-color);
 }
 
 .jumbotron {
-    background-color: var(--second-bg-color);
-    color: var(--second-color);
+  background-color: var(--second-bg-color);
+  color: var(--second-color);
 }
 
 button,
@@ -16,42 +16,52 @@ a,
 h2,
 h3,
 h4 {
-    color: var(--nav-color);
+  color: var(--nav-color);
 }
 
 h1 {
-    margin-top: 25px;
-    margin-left: 15px;
-    color: var(--primary-color);
-    font-weight: bold;
+  margin-top: 25px;
+  margin-left: 15px;
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
 nav {
-    position: relative;
-    height: 100vh;
-    border-radius: 0px 0px 35% 0px;
-    border-color: var(--second-bg-color);
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+  position: relative;
+  height: 100vh;
+  border-radius: 0px 0px 35% 0px;
+  border-color: var(--second-bg-color);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 nav .left {
-    display: flex;
-    justify-items: flex-start;
+  display: flex;
+  justify-items: flex-start;
 }
 
 nav .right {
-    width: 30%;
-    display: flex;
-    justify-items: flex-end;
-    justify-content: space-between;
-    justify-self: flex-end;
+  width: 30%;
+  display: flex;
+  justify-items: flex-end;
+  justify-content: space-between;
+  justify-self: flex-end;
 }
 
 #init {
-    height: 100vh;
-    width: 100%;
-    background-color: #081730;
-    display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #081730;
+  display: flex;
+}
+
+.btn-home {
+  color: var(--main-bg-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--main-bg-color);
 }

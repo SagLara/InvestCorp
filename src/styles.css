@@ -6,11 +6,11 @@ body {
 }
 
 :root {
-    --main-bg-color: #1c1427;
-    --second-bg-color: #40394a;
-    --primary-color: #4aa96c;
-    --nav-color: #7eca9c;
-    --second-color: #ccffbd;
+    --main-bg-color: #f4f1eb;
+    --second-bg-color: #1F41A0;
+    --primary-color: #009E35;
+    --nav-color: #009E35;
+    --second-color: #2c5623;
 }
 
 .btn-main {
