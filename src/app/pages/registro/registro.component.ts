@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -36,7 +37,60 @@ export class RegistroComponent implements OnInit {
       capitalInicial: new FormControl(100),
       direccion: new FormControl('calle a # 1-2 sur'),
       codigoPostal: new FormControl('1235'),
-      referido: new FormControl('url'),
+      referido: new FormControl('@referido'),
+    });
+  }
+
+  registro(){
+    const registro = this.formRegistro.value; 
+    
+    let dato = JSON.stringify(this.formRegistro.value);
+    console.log(dato);
+
+    console.log(registro.password);
+    console.log(registro.validPass);
+    if (registro.password!=registro.validPass) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error.',
+        text: "Las contraseñas deben ser iguales",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      return;
+    }
+    this.userService.post("/registro",registro).subscribe((res:any) =>{
+      console.log(res);
+      //res=true;
+      if(res==null){// En caso de que haya ocurrido un error en la petición.
+        Swal.fire({
+          icon: 'error',
+          title: 'Error. Registro',
+          text: "Ocurrio un error al crear el usuario ",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }else if(!res){ // Recibe res=false esta respuesta es en caso que el usuario ya exista en la base de datos.
+        Swal.fire({
+          icon: 'error',
+          title: 'Error. Usuario Duplicado',
+          text: "El usuario ya existe ",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+      else{ // En caso de que el flujo se haya creado correctamente.
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuario creado',
+          text: res,
+          showConfirmButton: false,
+          timer: 1500
+        }).then(()=>{
+          this.router.navigate(['login']);
+        });
+        
+      }  
     });
   }
 
