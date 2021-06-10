@@ -110,9 +110,10 @@
               Por favor diligencia los <br />
               campos a continuación
             </h4>
-            <button class="btn btn-main btn-sm" routerLink="/login"><small>¿Ya tienes una cuenta?</small><span>&nbsp;Login</span> </button>
+            <!-- <button class="btn btn-main btn-sm" routerLink="/login">
+              <small>¿Ya tienes una cuenta?</small><span>&nbsp;Login</span>
+            </button> -->
           </div>
-          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
         <div class="col-lg-6 col-sm-12 col-md-6">
           <div>
@@ -122,224 +123,239 @@
             <h3 class="mb-1">Empieza a manejar tu</h3>
             <h4 class="mb-3">dinero con nosotros!</h4>
           </div>
-          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          <!-- <button
+            class="btn btn-back btn-block btn-sm mt-n3"
+            routerLink="/home"
+          >
+            <i class="bi bi-arrow-return-left mr-2"></i><span>Inicio</span>
+          </button> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m-0 p-0">
+          <a href="#/login" class="btn "
+            ><small>¿Ya tienes una cuenta?</small><span>&nbsp;Login</span></a
+          >
+        </div>
+        <div class="col m-0 p-0">
+          <a href="#/home" class="btn "
+            ><small>Volver a inicio</small><span>&nbsp;Home</span></a
+          >
         </div>
       </div>
     </div>
-
-    <style>
-     
-    </style>
-    <form [formGroup]="formRegistro" class="bg-form px-5 py-3 rounded-lg">
-      <!-- Fila de formulario -->
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="nombres">Nombres</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="nombres"
-              id="nombres"
-              required
-            />
+    <section>
+      <form [formGroup]="formRegistro" class="bg-form px-5 py-3 rounded-lg">
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="nombres">Nombres</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="nombres"
+                id="nombres"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="userName">Usuario</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="userName"
+                id="userName"
+                required
+              />
+            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="userName">Usuario</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="userName"
-              id="userName"
-              required
-            />
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="apellidos">Apellidos</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="apellidos"
+                id="apellidos"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="password">Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+                id="password"
+                required
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Fin fila de formulario -->
-      <!-- Fila de formulario -->
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="apellidos">Apellidos</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="apellidos"
-              id="apellidos"
-              required
-            />
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="documento">No. de Documento</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="documento"
+                id="documento"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="validPass">Repetir Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="validPass"
+                id="validPass"
+                required
+              />
+            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="password">Contraseña</label>
-            <input
-              type="password"
-              class="form-control"
-              formControlName="password"
-              id="password"
-              required
-            />
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="fechaNacimiento">Fecha de Nacimiento</label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="fechaNacimiento"
+                id="fechaNacimiento"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="capitalInicial"
+                >Capital Inicial - Cantidad invertida</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                formControlName="capitalInicial"
+                id="capitalInicial"
+                required
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Fin fila de formulario -->
-      <!-- Fila de formulario -->
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="documento">No. de Documento</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="documento"
-              id="documento"
-              required
-            />
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="telefono">Teléfono (Celular)</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="telefono"
+                id="telefono"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="direccion">Dirección</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="direccion"
+                id="direccion"
+                required
+              />
+            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="validPass">Repetir Contraseña</label>
-            <input
-              type="password"
-              class="form-control"
-              formControlName="validPass"
-              id="validPass"
-              required
-            />
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="mail">Correo Electronico</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="mail"
+                id="mail"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="codigoPostal">Codigo Postal</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="codigoPostal"
+                id="codigoPostal"
+                required
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Fin fila de formulario -->
-      <!-- Fila de formulario -->
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="fechaNacimiento">Fecha de Nacimiento</label>
-            <input
-              type="date"
-              class="form-control"
-              formControlName="fechaNacimiento"
-              id="fechaNacimiento"
-              required
-            />
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="pais">País</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="pais"
+                id="pais"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="referido">Link de Referido</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="referido"
+                id="referido"
+                required
+              />
+            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="capitalInicial"
-              >Capital Inicial - Cantidad invertida</label
+        <!-- Fin fila de formulario -->
+        <div class="row">
+          <div class="col mt-3">
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg btn-block"
+              (click)="registro()"
             >
-            <input
-              type="number"
-              class="form-control"
-              formControlName="capitalInicial"
-              id="capitalInicial"
-              required
-            />
+              <span>Registrar<i class="bi bi-cursor-fill ml-2"></i></span>
+            </button>
           </div>
         </div>
-      </div>
-      <!-- Fin fila de formulario -->
-      <!-- Fila de formulario -->
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="telefono">Teléfono (Celular)</label>
-            <input
-              type="number"
-              class="form-control"
-              formControlName="telefono"
-              id="telefono"
-              required
-            />
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="direccion">Dirección</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="direccion"
-              id="direccion"
-              required
-            />
-          </div>
-        </div>
-      </div>
-      <!-- Fin fila de formulario -->
-      <!-- Fila de formulario -->
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="mail">Correo Electronico</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="mail"
-              id="mail"
-              required
-            />
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="codigoPostal">Codigo Postal</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="codigoPostal"
-              id="codigoPostal"
-              required
-            />
-          </div>
-        </div>
-      </div>
-      <!-- Fin fila de formulario -->
-      <!-- Fila de formulario -->
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="pais">País</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="pais"
-              id="pais"
-              required
-            />
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-group">
-            <label class="" for="referido">Link de Referido</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="referido"
-              id="referido"
-              required
-            />
-          </div>
-        </div>
-      </div>
-      <!-- Fin fila de formulario -->
-      <div class="row">
-        <div class="col mt-3">
-          <button
-            type="submit"
-            class="btn btn-primary btn-lg btn-block"
-            (click)="registro()"
-          >
-            <span>Registrar<i class="bi bi-cursor-fill ml-2"></i></span>
-          </button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </section>
   </div>
 </div>
