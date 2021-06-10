@@ -1,110 +1,143 @@
-.registro {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
+/* .registro {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card {
-    width: 100%;
-    height: 35%;
-    color: var(--nav-color);
-    background-color: var(--main-bg-color);
-    margin-top: -44px;
+  width: 100%;
+  height: 35%;
+  color: var(--main-bg-color);
+  background-color: var(--nav-color);
+  margin-top: -44px;
 }
 
 .container {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 h3 {
-    color: #7eca9c98;
+  color: var(--main-bg-color);
 }
 
 .two {
-    height: 65%;
-    background-color: var(--nav-color);
-    border: 1.5px solid var(--nav-color);
-    border-top-right-radius: 9%;
-    border-top-left-radius: 9%;
+  height: 65%;
+  background-color: var(--main-bg-color);
+  border: 1.5px solid var(--nav-color);
+  border-top-right-radius: 9%;
+  border-top-left-radius: 9%;
 }
 
 .btn-main {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .form-control {
-    border: none;
-    border-radius: 2px;
-    outline: 0;
-    border-bottom: 1.5px solid var(--main-bg-color);
-    background-color: transparent;
-    color: whitesmoke;
+  border: none;
+  border-radius: 2px;
+  outline: 0;
+  border-bottom: 1.5px solid var(--second-color);
+  background-color: transparent;
+  color: #495057;
 }
 
 .form-control:focus {
-    box-shadow: none;
-    border-radius: 2px;
-    border-bottom: 2px solid var(--main-bg-color);
-    background-color: transparent;
+  box-shadow: none;
+  border-radius: 2px;
+  border-bottom: 2px solid var(--main-bg-color);
+  background-color: transparent;
 }
 
 .form-control-placeholder {
-    position: absolute;
-    top: 14px;
-    left: 2px;
-    transition: all 200ms;
-    opacity: 0.7;
-    font-size: 100%;
-    font-weight: 500;
-    color: var(--second-bg-color);
+  position: absolute;
+  top: 14px;
+  left: 2px;
+  transition: all 200ms;
+  opacity: 0.7;
+  font-size: 100%;
+  font-weight: 500;
+  color: var(--second-bg-color);
 }
 
 .form-control-alone {
-    font-size: 100%;
-    font-weight: 600;
-    color: var(--second-bg-color);
+  font-size: 100%;
+  font-weight: 600;
+  color: var(--second-color);
 }
 
-.form-control:focus+.form-control-placeholder,
-.form-control:valid+.form-control-placeholder {
-    font-size: 100%;
-    transform: translate3d(0, -140%, 0);
-    opacity: 1;
-    top: 14px;
-    font-weight: 600;
-    color: var(--second-bg-color);
+.form-control:focus + .form-control-placeholder,
+.form-control:valid + .form-control-placeholder {
+  font-size: 100%;
+  transform: translate3d(0, -140%, 0);
+  opacity: 1;
+  top: 14px;
+  font-weight: 600;
+  color: var(--second-color);
 }
 
 @media (max-width: 1000px) {
-    h3 {
-        font-size: 22px;
-    }
-    h4 {
-        font-size: 18px;
-    }
-    button span {
-        font-size: 16px;
-    }
-    button small {
-        font-size: 14px;
-    }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  button span {
+    font-size: 16px;
+  }
+  button small {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 770px) {
-    h3 {
-        font-size: 19px;
-    }
-    h4 {
-        font-size: 15px;
-    }
-    button {
-        margin-bottom: 15px;
-    }
-    button span {
-        font-size: 14px;
-    }
-    button small {
-        font-size: 12px;
-    }
+  h3 {
+    font-size: 19px;
+  }
+  h4 {
+    font-size: 15px;
+  }
+  button {
+    margin-bottom: 15px;
+  }
+  button span {
+    font-size: 14px;
+  }
+  button small {
+    font-size: 12px;
+  }
+} */
+
+.bg-card {
+  background-color: var(--primary-color) !important;
+  color: var(--main-bg-color);
+}
+
+.bg-form {
+  background-color: var(--main-bg-color) !important;
+}
+
+/* .form-control {
+  border: 1px;
+  border-radius: 2px;
+  outline: 0;
+  border-bottom: 1.5px solid var(--second-color);
+  background-color: transparent;
+  color: #495057;
+} */
+
+.form-group label {
+  color: #495057;
+}
+
+.btn-primary {
+  color: var(--primary-color);
+  background-color: transparent;
+  border-color: var(--primary-color);
+}
+.btn-primary:hover {
+  color: var(--main-bg-color);
+  background-color: var(--primary-color);
+  border-color: transparent;
 }
