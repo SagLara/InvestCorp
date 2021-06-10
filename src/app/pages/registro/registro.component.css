@@ -118,15 +118,23 @@ h3 {
   background-color: var(--main-bg-color) !important;
 }
 
+/* .form-control {
+  border: 1px;
+  border-radius: 2px;
+  outline: 0;
+  border-bottom: 1.5px solid var(--second-color);
+  background-color: transparent;
+  color: #495057;
+} */
 
 .form-group label {
   color: #495057;
 }
 
 .btn-primary:active {
-    color: var(--main-bg-color) !important;
-    background-color: var(--primary-color) !important;
-    border-color: transparent !important;
+  color: var(--main-bg-color) !important;
+  background-color: var(--primary-color) !important;
+  border-color: transparent !important;
 }
 .btn-primary:hover {
   color: var(--primary-color);
@@ -140,9 +148,18 @@ h3 {
 }
 
 .rounded-lg {
-    border-radius: 1.3rem !important;
+  border-radius: 1.3rem !important;
 }
 .rounded-bt-lg {
-    border-bottom-left-radius: 1.3rem !important;
-    border-bottom-right-radius: 1.3rem !important;
+  border-bottom-left-radius: 1.3rem !important;
+  border-bottom-right-radius: 1.3rem !important;
+}
+
+form .form-group {
+  border: 0px;
+  margin-bottom: 0;
+}
+
+form label {
+  margin: 0;
 }
