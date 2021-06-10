@@ -128,7 +128,7 @@ h3 {
 } */
 
 .form-group label {
-  color: #495057;
+  color: #7d8084;
 }
 
 .btn-primary:active {
@@ -162,4 +162,5 @@ form .form-group {
 
 form label {
   margin: 0;
+  font-weight: bold;
 }
