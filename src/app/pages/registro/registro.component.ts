@@ -49,7 +49,15 @@ export class RegistroComponent implements OnInit {
 
     console.log(registro.password);
     console.log(registro.validPass);
-    if (registro.password!=registro.validPass) {
+    if (!this.formRegistro.valid) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error. Registro',
+        text: "Debe diligenciar los campos correctamente.",
+        showConfirmButton: false,
+        timer: 2000
+      });
+    }else if (registro.password!=registro.validPass) {
       Swal.fire({
         icon: 'error',
         title: 'Error.',
@@ -58,40 +66,42 @@ export class RegistroComponent implements OnInit {
         timer: 1500
       });
       return;
+    }else{
+      this.userService.post("/registro",registro).subscribe((res:any) =>{
+        console.log(res);
+        //res=true;
+        if(res==null){// En caso de que haya ocurrido un error en la petición.
+          Swal.fire({
+            icon: 'error',
+            title: 'Error. Registro',
+            text: "Ocurrio un error al crear el usuario ",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }else if(!res){ // Recibe res=false esta respuesta es en caso que el usuario ya exista en la base de datos.
+          Swal.fire({
+            icon: 'error',
+            title: 'Error. Usuario Duplicado',
+            text: "El usuario ya existe ",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+        else{ // En caso de que el flujo se haya creado correctamente.
+          Swal.fire({
+            icon: 'success',
+            title: 'Usuario creado',
+            text: res,
+            showConfirmButton: false,
+            timer: 1500
+          }).then(()=>{
+            this.router.navigate(['login']);
+          });
+          
+        }  
+      });
     }
-    this.userService.post("/registro",registro).subscribe((res:any) =>{
-      console.log(res);
-      //res=true;
-      if(res==null){// En caso de que haya ocurrido un error en la petición.
-        Swal.fire({
-          icon: 'error',
-          title: 'Error. Registro',
-          text: "Ocurrio un error al crear el usuario ",
-          showConfirmButton: false,
-          timer: 1500
-        });
-      }else if(!res){ // Recibe res=false esta respuesta es en caso que el usuario ya exista en la base de datos.
-        Swal.fire({
-          icon: 'error',
-          title: 'Error. Usuario Duplicado',
-          text: "El usuario ya existe ",
-          showConfirmButton: false,
-          timer: 1500
-        });
-      }
-      else{ // En caso de que el flujo se haya creado correctamente.
-        Swal.fire({
-          icon: 'success',
-          title: 'Usuario creado',
-          text: res,
-          showConfirmButton: false,
-          timer: 1500
-        }).then(()=>{
-          this.router.navigate(['login']);
-        });
-        
-      }  
-    });
+    
   }
 
 }

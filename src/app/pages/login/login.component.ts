@@ -30,20 +30,31 @@ export class LoginComponent implements OnInit {
 
   login(){
     const user = this.formLogin.value;
-    this.userService.post("/",user).subscribe((res:any) =>{
-      if(res.token==undefined){
-        Swal.fire({
-          icon: 'error',
-          title: 'Error.',
-          text: res,
-          showConfirmButton: false,
-          timer: 1500
-        });
-      }else{
-        localStorage.setItem('token', res.token);
-        this.router.navigate(['dashboard']);
-      }  
-    });
+    if(user.usuario=="" || user.password==""){
+      Swal.fire({
+        icon: 'error',
+        title: 'Error. Datos Vacios',
+        text: 'Por favor debe diligenciar los campos antes de continuar.',
+        showConfirmButton: false,
+        timer: 2000
+      });
+    }else{
+      this.userService.post("/",user).subscribe((res:any) =>{
+        console.log(res);
+        if(res.token==undefined){
+          Swal.fire({
+            icon: 'error',
+            title: 'Error.',
+            text: res,
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }else{
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['dashboard']);
+        }  
+      });
+    }
   }
 
 }
