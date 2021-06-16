@@ -28,7 +28,7 @@ h1 {
 
 nav {
   position: relative;
-  height: 100vh;
+  height: 40vh;
   border-radius: 0px 0px 35% 0px;
   border-color: var(--second-bg-color);
   display: flex;
@@ -64,4 +64,19 @@ nav .right {
 
 .navbar-light .navbar-nav .nav-link {
   color: var(--main-bg-color);
+}
+
+.navbar-nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.img-fluid-logo {
+  max-width: 40vh;
+  height: auto;
 }
