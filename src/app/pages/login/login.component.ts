@@ -39,7 +39,9 @@ export class LoginComponent implements OnInit {
         timer: 2000
       });
     }else{
-      this.userService.post("/api/login",user).subscribe((res:any) =>{
+      console.log(user);
+      
+      this.userService.post("/",user).subscribe((res:any) =>{
         console.log(res);
         if(res.token==undefined){
           Swal.fire({
@@ -51,7 +53,7 @@ export class LoginComponent implements OnInit {
           });
         }else{
           localStorage.setItem('token', res.token);
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['main']);
         }  
       });
     }

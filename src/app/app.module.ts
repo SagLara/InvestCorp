@@ -10,15 +10,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { JwtHelperService, JWT_OPTIONS } from "@auth0/angular-jwt";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { NavbarComponent } from './pages/dashboard/components/navbar/navbar.component';
+import { SidebarComponent } from './pages/dashboard/components/sidebar/sidebar.component';
+import { DashboardModule } from './pages/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistroComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
+    DashboardModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

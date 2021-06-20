@@ -1,0 +1,12 @@
+.sidebar {
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: var(--dark);
+}
+
+.sidebar .logo {
+    align-self: center;
+    justify-content: center;
+}
