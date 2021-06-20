@@ -1,15 +1,33 @@
 <!-- <h1 class="text-white">dashboard works!</h1> -->
-<div class="app">
+<div class="app" *ngIf="!menuExpand">
     <div class="header">
         <app-navbar></app-navbar>
     </div>
-    <div class="info">
-        <div class="aside">
-            <app-sidebar></app-sidebar>
-        </div>
-        <div class="window">
-            <router-outlet></router-outlet>
-        </div>
+
+    <div class="aside">
+        <app-sidebar (menuEmit)="menuExpand=$event"></app-sidebar>
+    </div>
+    <div class="window">
+        <h1>Bienvenido</h1>
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="footer">
+
+    </div>
+</div>
+
+<div class="a-app" *ngIf="menuExpand">
+    <div class="header">
+        <app-navbar></app-navbar>
+    </div>
+
+    <div class="aside">
+        <app-sidebar (menuEmit)="menuExpand=$event"></app-sidebar>
+    </div>
+    <div class="window">
+        <h1>Bienvenido</h1>
+        <router-outlet></router-outlet>
     </div>
 
     <div class="footer">

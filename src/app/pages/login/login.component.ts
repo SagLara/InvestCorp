@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
           });
         }else{
           localStorage.setItem('token', res.token);
-          this.router.navigate(['main']);
+          this.router.navigate(['dashboard/main']);
         }  
       });
     }

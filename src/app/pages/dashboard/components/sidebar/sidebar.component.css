@@ -1,12 +1,57 @@
 .sidebar {
-    height: 88vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-content: center;
     background-color: var(--dark);
+    transition-property: 1s;
 }
 
 .sidebar .logo {
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     align-self: center;
     justify-content: center;
+}
+
+.dropdown {
+    justify-content: flex-end;
+}
+
+.a-sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: var(--dark);
+    transition-property: 1s;
+}
+
+.a-sidebar .logo {
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-self: center;
+    justify-content: center;
+}
+
+i {
+    color: var(--primary-color);
+    margin-left: 5px;
+    font-size: 25px;
+}
+
+.btn-menu {
+    background-color: transparent;
+    transition: color 0.2s;
+}
+
+.btn-menu:hover {
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+
+.btn-menu:hover i {
+    color: var(--white);
 }

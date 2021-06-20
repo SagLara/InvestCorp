@@ -1,15 +1,63 @@
-<div class="sidebar">
+<div class="sidebar" *ngIf="!menuBar">
+
+    <button type="button" class="btn btn-menu" (click)="changeMenu()">
+        <i class="bi bi-menu-app-fill" *ngIf="!menuBar"></i>
+        <i class="bi bi-menu-button-wide-fill" *ngIf="menuBar"></i>
+    </button>
 
     <div class="logo">
-        <img src="../../../../../assets/images/logo-investcorp.png" width="120" height="120" class="d-inline-block" alt="">
+        <img src="../../../../../assets/images/logo-investcorp.png" width="200" height="100" class="d-inline-block" alt="">
     </div>
 
     <input type="search" name="" id="">
 
-    <a [routerLink]="['/dashboard/main']" routerLinkActive="active" class="btn btn-main">Dash Board</a>
-    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="btn btn-main">Opcion 1</a>
-    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="btn btn-main">Opcion 2</a>
-    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="btn btn-main">Opcion 3</a>
-    <a [routerLink]="['/dashboard/config']" routerLinkActive="active" class="btn btn-main">Configuración</a>
+    <a [routerLink]="['/dashboard/main']" routerLinkActive="active" class="btn btn-main">
+        <i class="bi bi-rainbow"></i> DashBoard
+    </a>
+    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="btn btn-main">
+        <i class="bi bi-arrow-right-circle-fill"></i> Opcion 1
+        <i class="bi bi-chevron-bar-down dropdown"></i>
+    </a>
+    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="btn btn-main">
+        <i class="bi bi-arrow-right-circle-fill"></i> Opcion 2
+    </a>
+    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="btn btn-main">
+        <i class="bi bi-arrow-right-circle-fill"></i> Opcion 3
+    </a>
+    <a [routerLink]="['/dashboard/config']" routerLinkActive="active" class="btn btn-main">
+        <i class="bi bi-gear-fill"></i> Configuración
+    </a>
+
+</div>
+
+<div class="sidebar" *ngIf="menuBar">
+
+    <button type="button" class="btn btn-menu" (click)="changeMenu()">
+        <i class="bi bi-menu-app-fill" *ngIf="!menuBar"></i>
+        <i class="bi bi-menu-button-wide-fill" *ngIf="menuBar"></i>
+    </button>
+
+    <div class="logo">
+        <img src="../../../../../assets/images/icono-investcorp.png" width="60" height="30" class="d-inline-block" alt="">
+    </div>
+
+    <input type="search" name="" id="">
+
+    <a [routerLink]="['/dashboard/main']" routerLinkActive="active" class="btn btn-main">
+        <i class="bi bi-rainbow"></i>
+    </a>
+    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="btn btn-main">
+        <i class="bi bi-arrow-right-circle-fill"></i>
+        <!-- <i class="bi bi-chevron-bar-down dropdown"></i> -->
+    </a>
+    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="btn btn-main">
+        <i class="bi bi-arrow-right-circle-fill"></i>
+    </a>
+    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="btn btn-main">
+        <i class="bi bi-arrow-right-circle-fill"></i>
+    </a>
+    <a [routerLink]="['/dashboard/config']" routerLinkActive="active" class="btn btn-main">
+        <i class="bi bi-gear-fill"></i>
+    </a>
 
 </div>
