@@ -110,8 +110,10 @@ h3 {
 } */
 
 .bg-card {
-  background-color: var(--primary-color) !important;
-  color: var(--main-bg-color);
+  /* background-color: var(--primary-color) !important; */
+  background-color: var(--main-bg-color) !important;
+  /* color: var(--main-bg-color); */
+  color: var(--primary-color);
 }
 
 .bg-form {

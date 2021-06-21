@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  DROP_MENU: false,
   baseUrl: 'http://localhost:3000',
   USER_SERVICE: 'http://localhost:3000/login',
 };
