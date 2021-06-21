@@ -1,44 +1,214 @@
-<nav class="site-header sticky-top py-1">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-
-
-        <a class="py-2" href="#" aria-label="Product">
-            <div class="left ml-3">
-                <svg class="d-block mx-auto mt-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24" focusable="false"><title>Home</title><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path></svg>
-                <h3 class="ml-2 ">Invest Corp</h3>
-            </div>
-
-        </a>
-
-        <div class="right">
-            <a class="py-2 d-none d-md-inline-block" href="#/login">Iniciar Sesión</a>
-            <a class="py-2 d-none d-md-inline-block" href="#/registro">Registrarse</a>
-        </div>
-
-    </div>
-    <br>
-    <div class="container">
-        <h1 class="display-4">
-            <i class="bi bi-cart-check"></i> Invest Corp!
-        </h1>
-        <hr>
-        <p>Bien ahora es momento de Ingresar o Registrarte</p>
-        <a class="btn btn-main btn-lg m-3" href="#/login" role="button">Iniciar Sesión</a>
-        <a class="btn btn-main btn-lg m-3" href="#/registro" role="button">Registrarse</a>
-    </div>
+<!-- Inicio barra de navegación -->
+<nav
+  class="
+    navbar navbar-expand-lg navbar-light
+    bg-light
+    justify-content-center
+    text-center
+  "
+>
+  <a class="navbar-brand" href="#">
+    <img
+      src="../../../assets/images/logo-investcorp.png"
+      class="d-inline-block align-top img-fluid-logo"
+      alt=""
+    />
+  </a>
+  <div class="" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item btn btn-home m-2">
+        <a class="nav-link" href="#/login">Login</a>
+      </li>
+      <li class="nav-item btn btn-home m-2">
+        <a class="nav-link" href="#/registro">Signup</a>
+      </li>
+    </ul>
+  </div>
 </nav>
+<!-- Fin barra de navegación -->
 
-<section id="init">
-    <div class="jumbotron">
-        <h1 class="display-4">
-            <i class="bi bi-emoji-laughing emoji"></i> Bienvenido
-        </h1>
-        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam officia consequuntur nam eligendi perferendis, debitis reprehenderit maiores esse placeat ea. Quasi tenetur quibusdam similique error aut sint incidunt ipsa quaerat?</p>
-        <hr class="my-4">
-
+<!-- Inicio de carrusel -->
+<div
+  id="carouselExampleIndicators"
+  class="carousel slide mx-5 my-2"
+  data-ride="carousel"
+>
+  <ol class="carousel-indicators">
+    <li
+      data-target="#carouselExampleIndicators"
+      data-slide-to="0"
+      class="active"
+    ></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="https://dummyimage.com/1280x500/000/fff.jpg&text=imagen_1280x500"
+        class="d-block w-100"
+        alt="..."
+      />
     </div>
+    <div class="carousel-item">
+      <img
+        src="https://dummyimage.com/1280x500/000/fff.jpg&text=imagen_1280x500"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://dummyimage.com/1280x500/000/fff.jpg&text=imagen_1280x500"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev"
+    href="#carouselExampleIndicators"
+    role="button"
+    data-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carouselExampleIndicators"
+    role="button"
+    data-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!-- Fin de carrusel -->
+
+<!-- Inicio de acordeon -->
+<section class="container-fluid">
+  <div class="accordion m-5" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button
+            class="btn btn-link btn-block text-left"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Quiénes somos
+          </button>
+        </h2>
+      </div>
+
+      <div
+        id="collapseOne"
+        class="collapse show"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo
+          integer malesuada nunc vel risus commodo. Aenean euismod elementum
+          nisi quis eleifend quam adipiscing. Nisl nunc mi ipsum faucibus vitae
+          aliquet. Nunc non blandit massa enim nec dui nunc mattis. Mauris sit
+          amet massa vitae tortor condimentum. Orci dapibus ultrices in iaculis
+          nunc sed augue lacus. Nulla posuere sollicitudin aliquam ultrices
+          sagittis orci a scelerisque.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button
+            class="btn btn-link btn-block text-left collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Nuestro trabajo
+          </button>
+        </h2>
+      </div>
+      <div
+        id="collapseTwo"
+        class="collapse"
+        aria-labelledby="headingTwo"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          Eget aliquet nibh praesent tristique. Odio pellentesque diam volutpat
+          commodo sed egestas. Egestas fringilla phasellus faucibus scelerisque
+          eleifend donec pretium vulputate. Nec nam aliquam sem et tortor
+          consequat id porta nibh. Consectetur purus ut faucibus pulvinar
+          elementum integer enim neque volutpat. Turpis cursus in hac habitasse
+          platea. Nunc vel risus commodo viverra maecenas accumsan lacus. Dolor
+          sit amet consectetur adipiscing elit. Vitae aliquet nec ullamcorper
+          sit amet risus nullam.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button
+            class="btn btn-link btn-block text-left collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            Nuestros clientes
+          </button>
+        </h2>
+      </div>
+      <div
+        id="collapseThree"
+        class="collapse"
+        aria-labelledby="headingThree"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo
+          integer malesuada nunc vel risus commodo. Aenean euismod elementum
+          nisi quis eleifend quam adipiscing. Nisl nunc mi ipsum faucibus vitae
+          aliquet. Nunc non blandit massa enim nec dui nunc mattis. Mauris sit
+          amet massa vitae tortor condimentum. Orci dapibus ultrices in iaculis
+          nunc sed augue lacus.
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+<!-- Fin de acordeon -->
 
-<section id="performance">
-
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 order-1 pl-lg-5">
+      <img
+        src="https://dummyimage.com/700x400/000/fff.jpg&text=imagen_700x400"
+        class="d-inline-block align-top img-fluid"
+        alt=""
+      />
+    </div>
+    <div class="col-lg-4 order-2 pr-lg-5 text-left">
+      <h1 class="ml-0">Lorem Ipsum</h1>
+      <p class="text-left lead text-white">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Leo integer
+        malesuada nunc vel risus commodo. Aenean euismod elementum nisi quis
+        eleifend quam adipiscing.
+      </p>
+    </div>
+  </div>
 </section>

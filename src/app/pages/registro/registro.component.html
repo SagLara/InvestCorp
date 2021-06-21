@@ -1,98 +1,272 @@
-<div class="container d-flex justify-content-center">
-    <div class="d-flex flex-row justify-content-between">
-        <div class="registro">
-            <div class="card mt-3 p-5">
-                <div class="logo mb-2"><i class="bi bi-person-badge-fill big-icon"></i></div>
-                <div>
-                    <h3 class="mb-1">Formulario de registro</h3>
-                    <h4 class="mb-4">Por favor diligencia los <br> campos a continuación</h4>
-                </div>
-            </div>
-            <div class="card two px-4 py-3">
-                <form [formGroup]="formRegistro">
-                    <div class="form-group mt-2">
-                        <input type="text" class="form-control " formControlName="nombres" id="nombres" required>
-                        <label class="form-control-placeholder " for="nombres">Nombres</label>
-                    </div>
-                    <div class="form-group mt-n2">
-                        <input type="text" class="form-control" formControlName="apellidos" id="apellidos" required>
-                        <label class="form-control-placeholder" for="apellidos">Apellidos</label>
-                    </div>
-                    <div class="form-group mt-n2 mb-n1">
-                        <input type="text" class="form-control" formControlName="documento" id="documento" required>
-                        <label class="form-control-placeholder" for="documento">No. de Documento</label>
-                    </div>
-                    <div class="form-group mt-n2">
-                        <label class="mt-3 mb-n1" for="fechaNacimiento">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control mt-n2" formControlName="fechaNacimiento" id="fechaNacimiento" required>
-
-                    </div>
-                    <div class="form-group mt-n2">
-                        <input type="number" class="form-control" formControlName="telefono" id="telefono" required>
-                        <label class="form-control-placeholder" for="telefono">Teléfono (Celular)</label>
-                    </div>
-                    <div class="form-group mt-n2">
-                        <input type="text" class="form-control " formControlName="mail" id="mail" required>
-                        <label class="form-control-placeholder " for="mail">Correo Electronico</label>
-                    </div>
-                    <div class="form-group mt-n2">
-                        <input type="text" class="form-control " formControlName="pais" id="pais" required>
-                        <label class="form-control-placeholder " for="pais">País</label>
-                    </div>
-                    <div class="form-group mt-n2">
-                        <input type="text" class="form-control " formControlName="ciudad" id="ciudad" required>
-                        <label class="form-control-placeholder " for="ciudad">Ciudad</label>
-                    </div>
-                    <button class="btn btn-back btn-block btn-sm mt-n3" routerLink="/home">
-                    <i class="bi bi-arrow-return-left mr-2"></i><span>Inicio</span>
-                </button>
-                </form>
-            </div>
+<div class="container">
+  <div class="card bg-card rounded-bt-lg">
+    <div class="card-body ml-2">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 col-md-6">
+          <div>
+            <!-- <div class="logo mb-2">
+              <i class="bi bi-person-badge-fill big-icon"></i>
+            </div> -->
+            <h3 class="mb-1">Formulario de registro</h3>
+            <h4 class="mb-4">
+              Por favor diligencia los <br />
+              campos a continuación
+            </h4>
+          </div>
         </div>
-        <div class="registro">
-            <div class="card mt-3 p-5">
-                <div class="logo mb-2"><i class="bi bi-emoji-sunglasses-fill big-icon"></i></div>
-                <div>
-                    <h3 class="mb-1">Empieza a manejar tu</h3>
-                    <h4 class="mb-3">dinero con nosotros!</h4>
-                </div>
-                <button class="btn btn-main btn-sm mb-5" routerLink="/login"><small>¿Ya tienes una cuenta?</small><span>&nbsp;Login</span> </button>
-            </div>
-            <div class="card two px-4 py-3">
-                <form [formGroup]="formRegistro">
-                    <div class="form-group mt-2">
-                        <input type="text" class="form-control" formControlName="userName" id="userName" required>
-                        <label class="form-control-placeholder" for="userName">Usuario</label>
-                    </div>
-                    <div class="form-group mt-n1">
-                        <input type="password" class="form-control" formControlName="password" id="password" required>
-                        <label class="form-control-placeholder" for="password">Contraseña</label>
-                    </div>
-                    <div class="form-group mt-n1">
-                        <input type="password" class="form-control " formControlName="validPass" id="validPass" required>
-                        <label class="form-control-placeholder " for="validPass">Repetir Contraseña</label>
-                    </div>
-                    <div class="form-group mt-n1">
-                        <input type="number" class="form-control" formControlName="capitalInicial" id="capitalInicial" required>
-                        <label class="form-control-placeholder" for="capitalInicial">Capital Inicial - Cantidad invertida</label>
-                    </div>
-                    <div class="form-group mt-n1">
-                        <input type="text" class="form-control " formControlName="direccion" id="direccion" required>
-                        <label class="form-control-placeholder " for="direccion">Dirección</label>
-                    </div>
-                    <div class="form-group mt-n1">
-                        <input type="text" class="form-control" formControlName="codigoPostal" id="codigoPostal" required>
-                        <label class="form-control-placeholder" for="codigoPostal">Codigo Postal</label>
-                    </div>
-                    <div class="form-group mt-n1">
-                        <input type="text" class="form-control " formControlName="referido" id="referido" required>
-                        <label class="form-control-placeholder " for="referido">Link de Referido</label>
-                    </div>
-                    <button class="btn btn-bg btn-block btn-lg mt-1 mb-2">
-                        <span>Registrar<i class="bi bi-cursor-fill ml-2"></i></span>
-                    </button>
-                </form>
-            </div>
+        <div class="col-lg-6 col-sm-12 col-md-6">
+          <div>
+            <!-- <div class="logo mb-2">
+              <i class="bi bi-emoji-sunglasses-fill big-icon"></i>
+            </div> -->
+            <h3 class="mb-1">Empieza a manejar tu</h3>
+            <h4 class="mb-3">dinero con nosotros!</h4>
+          </div>
         </div>
+      </div>
+      <div class="row justify-content-around">
+        <div class="col">
+          <a href="#/login" class="btn btn-blue">
+            <small>¿Ya tienes una cuenta?</small><span>&nbsp;Login</span></a
+          >
+        </div>
+        <div class="col m-0 p-0">
+          <a href="#/home" class="btn btn-blue">
+            <small>Volver al inicio</small><span>&nbsp;Home</span></a
+          >
+        </div>
+      </div>
     </div>
+    <section class="">
+      <form [formGroup]="formRegistro" class="bg-form px-5 pb-3 rounded-lg">
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="nombres">Nombres</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="nombres"
+                id="nombres"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="apellidos">Apellidos</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="apellidos"
+                id="apellidos"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="fechaNacimiento">Fecha de Nacimiento</label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="fechaNacimiento"
+                id="fechaNacimiento"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="documento">No. de Documento</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="documento"
+                id="documento"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="pais">País</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="pais"
+                id="pais"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="ciudad">Ciudad</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="ciudad"
+                id="ciudad"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="direccion">Dirección</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="direccion"
+                id="direccion"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="telefono">Teléfono</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="telefono"
+                id="telefono"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="codigoPostal">Codigo Postal</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="codigoPostal"
+                id="codigoPostal"
+                required
+              />
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="referido">Sponsor</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="referido"
+                id="referido"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="capitalInicial"
+                >Capital Inicial - Cantidad invertida</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                formControlName="capitalInicial"
+                id="capitalInicial"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="userName">Nombre de Usuario</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="userName"
+                id="userName"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="mail">Correo Electronico</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="mail"
+                id="mail"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Fin fila de formulario -->
+        <!-- Fila de formulario -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="password">Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+                id="password"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="" for="validPass">Repetir Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="validPass"
+                id="validPass"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Fin fila de formulario -->
+
+        <div class="row">
+          <div class="col mt-3">
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg btn-block"
+              (click)="registro()"
+            >
+              <span>Registrar<i class="bi bi-cursor-fill ml-2"></i></span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
 </div>

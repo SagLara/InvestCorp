@@ -24,7 +24,7 @@ export class LoginGuard implements CanActivate {
         showConfirmButton: false,
         timer: 1500
       }).then(()=>{
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard/main']);
       }).catch(()=> {return false});
       return false;
     }

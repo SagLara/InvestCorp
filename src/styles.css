@@ -6,12 +6,14 @@ body {
 }
 
 :root {
-    --main-bg-color: #1c1427;
-    --second-bg-color: #40394a;
-    --primary-color: #4aa96c;
-    --nav-color: #7eca9c;
-    --second-color: #ccffbd;
+    --main-bg-color: #f4f1eb;
+    --second-bg-color: #1F41A0;
+    --primary-color: #00841E;
+    --nav-color: #00841E;
+    --second-color: #2c5623;
+    --footer-color: #0f8135;
 }
+
 
 .btn-main {
     background-color: transparent;
@@ -28,9 +30,39 @@ body {
     color: var(--main-bg-color);
 }
 
+.btn-bg {
+    background-color: transparent;
+    border: 1.5px solid var(--main-bg-color);
+    border-radius: 5%;
+    color: var(--main-bg-color);
+    font-weight: 600;
+}
+
+.btn-bg:hover {
+    background-color: var(--main-bg-color);
+    border: 1.5px solid var(--main-bg-color);
+    border-radius: 5%;
+    color: var(--primary-color);
+}
+
+.btn-blue {
+    background-color: transparent;
+    border: 1.5px solid var(--second-bg-color);
+    border-radius: 5%;
+    color: var(--second-bg-color);
+    font-weight: 600;
+}
+
+.btn-blue:hover {
+    background-color: var(--second-bg-color);
+    border: 1.5px solid var(--second-bg-color);
+    border-radius: 5%;
+    color: var(--main-bg-color);
+}
+
 .btn-back {
     background-color: transparent;
-    border: 1.5px solid var(--red);
+    border: 2px solid var(--red);
     border-radius: 5%;
     color: var(--red);
     font-weight: 600;
