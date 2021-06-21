@@ -1,4 +1,4 @@
-.app {
+/* .app {
     height: 100vh;
     display: grid;
     grid-template-columns: 15% 85%;
@@ -35,4 +35,14 @@
     display: grid;
     grid-template-columns: 5% 95%;
     grid-template-rows: 0.5fr 8fr 0.5fr;
+} */
+
+body {
+  font-size: 0.875rem;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
 }
