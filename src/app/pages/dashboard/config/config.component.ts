@@ -70,6 +70,9 @@ export class ConfigComponent implements OnInit {
 
   changePassword(){
     this.flagPass = !this.flagPass;
+    if(this.update){
+      this.update = !this.update;
+    }
   }
 
   updateInfo(){

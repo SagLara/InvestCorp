@@ -64,9 +64,8 @@ label {
     border: 1px solid var(--light-color);
     border-width: 0px 0px 1px;
     pointer-events: none;
-    padding-right: 25px;
     font-weight: 600;
-    text-align: inherit;
+    transition: color, background-color 0.5s;
 }
 
 .edit {
