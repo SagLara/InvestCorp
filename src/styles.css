@@ -12,8 +12,8 @@ body {
     --nav-color: #00841E;
     --second-color: #2c5623;
     --footer-color: #0f8135;
+    --light-color: rgb(204, 255, 189);
 }
-
 
 .btn-main {
     background-color: transparent;
