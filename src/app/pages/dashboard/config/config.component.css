@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: var( --teal);
+    color: var(--second-color);
 }
 
 .user-img {
@@ -54,24 +54,24 @@ h6 {
 }
 
 label {
-    color: var(--light-color);
+    color: var(--second-color);
     font-weight: bold;
 }
 
 .view {
-    background-color: transparent;
-    color: whitesmoke;
-    border: 1px solid var(--light-color);
-    border-width: 0px 0px 1px;
+    background-color: lightgray;
+    /* color: whitesmoke; */
+    /* border: 1px solid var(--light-color); */
+    /* border-width: 0px 0px 1px; */
     pointer-events: none;
     font-weight: 600;
     transition: color, background-color 0.5s;
 }
 
 .edit {
-    background-color: rgb(225, 250, 217);
-    color: var(--second-bg-color);
-    border: var(--light-color);
+    /* background-color: rgb(225, 250, 217); */
+    /* color: var(--second-bg-color); */
+    /* border: var(--light-color); */
     font-weight: 600;
     transition: color, background-color 0.5s;
 }
