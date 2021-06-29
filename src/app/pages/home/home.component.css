@@ -80,3 +80,12 @@ nav .right {
   max-width: 70vh;
   height: auto;
 }
+
+.card-text {
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: large;
+}
+.card-header {
+  font-size: x-large;
+}
