@@ -4,10 +4,11 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { ConfigComponent } from './config/config.component';
 import { MainComponent } from './main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreComponent } from './store/store.component';
 
 
 @NgModule({
-  declarations: [ConfigComponent, MainComponent],
+  declarations: [ConfigComponent, MainComponent, StoreComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

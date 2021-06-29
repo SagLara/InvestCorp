@@ -14,6 +14,7 @@ body {
   --footer-color: #0f8135;
   --light-color: #ccffbd;
   --dark-color: #ccffbd;
+  --light-second-color: #b8c1dd;
 }
 
 .btn-main {
@@ -96,11 +97,11 @@ body {
 }
 
 .links a {
-  color: crimson !important;
+  color: var(--light-color) !important;
 }
 
 .links a:link {
-  color: crimson !important;
+  color: var(--light-color) !important;
 }
 
 .links a:hover {
