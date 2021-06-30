@@ -1,54 +1,139 @@
 <div class="content-wrapper">
-  <div class="container-fluid">
-    <div class="row">
-      <!-- Icon Cards-->
-      <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
-        <div class="inforide">
-          <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-4 col-4 rideone">
-              <img
-                src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620"
-              />
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Icon Cards-->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+                <div class="inforide">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-4 rideone">
+                            <img src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620" />
+                        </div>
+                        <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                            <h4>Employee</h4>
+                            <h2>20</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
-              <h4>Employee</h4>
-              <h2>20</h2>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
-        <div class="inforide">
-          <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-4 col-4 ridetwo">
-              <img
-                src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620"
-              />
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+                <div class="inforide">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-4 ridetwo">
+                            <img src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620" />
+                        </div>
+                        <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                            <h4>Clients</h4>
+                            <h2>120</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
-              <h4>Clients</h4>
-              <h2>120</h2>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
-        <div class="inforide">
-          <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-4 col-4 ridethree">
-              <img
-                src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620"
-              />
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+                <div class="inforide">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-4 ridethree">
+                            <img src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620" />
+                        </div>
+                        <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                            <h4>Jobs</h4>
+                            <h2>50</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
-              <h4>Jobs</h4>
-              <h2>50</h2>
-            </div>
-          </div>
         </div>
-      </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="card ">
+                    <div class="card-header">
+                        Ganancias de Hoy. {{ganancias[0].fecha | date:'dd-MM-yyyy'}}
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="bg-table">
+                                <tr>
+                                    <th class="col-1">#</th>
+                                    <th class="col-3">Ingresos</th>
+                                    <th class="col-3">Perdidas</th>
+                                    <th class="col-3">Número de Transacciones</th>
+                                    <th class="col-2">Valor neto</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-table-cell">
+                                <tr>
+                                    <th class="col-1">{{ gananciaHoy.id }}</th>
+                                    <td class="col-3">{{ gananciaHoy.ingresos}}</td>
+                                    <td class="col-3">{{ gananciaHoy.perdidas}}</td>
+                                    <td class="col-3">{{ gananciaHoy.numeroTransacciones}}</td>
+                                    <td class="col-2">{{ gananciaHoy.ingresos - gananciaHoy.perdidas}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card ">
+                    <div class="card-header">
+                        Ganancias Totales.
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="bg-table">
+                                <tr>
+                                    <th class="col-2">Usuario</th>
+                                    <th class="col-4">Valor Total</th>
+                                    <th class="col-2">Número de Transacciones</th>
+                                    <th class="col-2">Dias de ganancias</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-table-cell">
+                                <tr>
+                                    <td class="col-2">{{ gananciaTotal.usuario.userName}}</td>
+                                    <td class="col-4">{{ gananciaTotal.valorNeto}}</td>
+                                    <td class="col-2">{{ gananciaTotal.numeroTransacciones}}</td>
+                                    <td class="col-2">{{ gananciaTotal.diasActivo}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="container-fluid">
+
+    </div>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                Historico ganancias.
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead class="bg-table">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Valor Neto</th>
+                            <th scope="col">Número de Transacciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-table-cell">
+                        <tr *ngFor="let item of ganancias; let i = index">
+                            <!-- (pagina -1)*tamPag :  ((pagina)*tamPag) -->
+                            <th scope="row">{{ (i+1) }}</th>
+                            <td class="word-wrap">{{ userGanancias?.nombres }} {{ userGanancias?.apellidos }}</td>
+                            <td> {{ item.fecha | date:'dd-MM-yyyy' }}</td>
+                            <td>{{ item.valorTotal}}</td>
+                            <td>{{ item.gananciaDiariaId.numeroTransacciones}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

@@ -2,126 +2,155 @@
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 body {
-  background-color: var(--main-bg-color);
+    background-color: var(--main-bg-color);
 }
 
 :root {
-  --main-bg-color: #f4f1eb;
-  --second-bg-color: #1f41a0;
-  --primary-color: #00841e;
-  --nav-color: #00841e;
-  --second-color: #2c5623;
-  --footer-color: #0f8135;
-  --light-color: #ccffbd;
-  --dark-color: #ccffbd;
-  --light-second-color: #b8c1dd;
+    --main-bg-color: #f4f1eb;
+    --second-bg-color: #1f41a0;
+    --primary-color: #00841e;
+    --nav-color: #00841e;
+    --second-color: #2c5623;
+    --footer-color: #0f8135;
+    --light-color: #ccffbd;
+    --dark-color: #ccffbd;
+    --light-second-color: #b8c1dd;
 }
 
 .btn-main {
-  background-color: transparent;
-  border: 1.5px solid var(--primary-color);
-  border-radius: 5%;
-  color: var(--primary-color);
-  font-weight: 600;
+    background-color: transparent;
+    border: 1.5px solid var(--primary-color);
+    border-radius: 5%;
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 .btn-main:hover {
-  background-color: var(--primary-color);
-  border: 1.5px solid var(--primary-color);
-  border-radius: 5%;
-  color: var(--main-bg-color);
+    background-color: var(--primary-color);
+    border: 1.5px solid var(--primary-color);
+    border-radius: 5%;
+    color: var(--main-bg-color);
 }
 
 .btn-bg {
-  background-color: transparent;
-  border: 1.5px solid var(--main-bg-color);
-  border-radius: 5%;
-  color: var(--main-bg-color);
-  font-weight: 600;
+    background-color: transparent;
+    border: 1.5px solid var(--main-bg-color);
+    border-radius: 5%;
+    color: var(--main-bg-color);
+    font-weight: 600;
 }
 
 .btn-bg:hover {
-  background-color: var(--main-bg-color);
-  border: 1.5px solid var(--main-bg-color);
-  border-radius: 5%;
-  color: var(--primary-color);
+    background-color: var(--main-bg-color);
+    border: 1.5px solid var(--main-bg-color);
+    border-radius: 5%;
+    color: var(--primary-color);
 }
 
 .btn-blue {
-  background-color: transparent;
-  border: 1.5px solid var(--second-bg-color);
-  border-radius: 5%;
-  color: var(--second-bg-color);
-  font-weight: 600;
+    background-color: transparent;
+    border: 1.5px solid var(--second-bg-color);
+    border-radius: 5%;
+    color: var(--second-bg-color);
+    font-weight: 600;
 }
 
 .btn-blue:hover {
-  background-color: var(--second-bg-color);
-  border: 1.5px solid var(--second-bg-color);
-  border-radius: 5%;
-  color: var(--main-bg-color);
+    background-color: var(--second-bg-color);
+    border: 1.5px solid var(--second-bg-color);
+    border-radius: 5%;
+    color: var(--main-bg-color);
 }
 
 .btn-back {
-  background-color: transparent;
-  border: 2px solid var(--red);
-  border-radius: 5%;
-  color: var(--red);
-  font-weight: 600;
+    background-color: transparent;
+    border: 2px solid var(--red);
+    border-radius: 5%;
+    color: var(--red);
+    font-weight: 600;
 }
 
 .btn-back:hover {
-  background-color: var(--red);
-  border: 1.5px solid var(--red);
-  border-radius: 5%;
-  color: var(--main-bg-color);
+    background-color: var(--red);
+    border: 1.5px solid var(--red);
+    border-radius: 5%;
+    color: var(--main-bg-color);
 }
 
 .btn-bg {
-  background-color: transparent;
-  border: 1.5px solid var(--main-bg-color);
-  border-radius: 5%;
-  color: var(--main-bg-color);
-  font-weight: 600;
+    background-color: transparent;
+    border: 1.5px solid var(--main-bg-color);
+    border-radius: 5%;
+    color: var(--main-bg-color);
+    font-weight: 600;
 }
 
 .btn-bg:hover {
-  background-color: var(--main-bg-color);
-  border: 1.5px solid var(--main-bg-color);
-  border-radius: 5%;
-  color: var(--primary-color-color);
+    background-color: var(--main-bg-color);
+    border: 1.5px solid var(--main-bg-color);
+    border-radius: 5%;
+    color: var(--primary-color-color);
 }
 
 .big-icon {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 .links a {
-  color: var(--light-color) !important;
+    color: var(--light-color) !important;
 }
 
 .links a:link {
-  color: var(--light-color) !important;
+    color: var(--light-color) !important;
 }
 
 .links a:hover {
-  color: var(--indigo) !important;
-  transition: color, 0.4s;
+    color: var(--indigo) !important;
+    transition: color, 0.4s;
 }
 
 hr {
-  border: 0;
-  margin-top: 0.8rem;
-  margin-bottom: 0.8rem;
-  border-top: 1px solid rgb(204, 255, 189);
+    border: 0;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-top: 1px solid rgb(204, 255, 189);
 }
 
 .form-group {
-  position: relative;
-  margin-bottom: 2rem;
-  color: var(--main-bg-color);
+    position: relative;
+    margin-bottom: 2rem;
+    color: var(--main-bg-color);
 }
 
 .bg-blue-invest {
-  background-color: var(--second-bg-color) !important;
+    background-color: var(--second-bg-color) !important;
+}
+
+
+/* Estilos de tablas */
+
+.bg-table {
+    background: var(--second-bg-color);
+    color: whitesmoke;
+    margin: auto;
+    text-align: center;
+}
+
+.bg-table-cell {
+    color: var(--dark);
+    background-color: #fbfbfb;
+    border-color: #eeeeee;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-table {
+    min-width: 38vw;
+    align-self: center;
+    text-align: center;
+}
+
+.badge {
+    color: white;
 }
