@@ -5,8 +5,7 @@ import { ConfigComponent } from './config/config.component';
 import { MainComponent } from './main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreComponent } from './store/store.component';
-
-
+import { NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [ConfigComponent, MainComponent, StoreComponent],
   imports: [
@@ -14,6 +13,9 @@ import { StoreComponent } from './store/store.component';
     DashboardRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-  ]
+    NgxPaginationModule,
+  ],
+  exports:[MainComponent],
+  bootstrap:[MainComponent]
 })
 export class DashboardModule { }

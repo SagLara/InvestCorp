@@ -48,26 +48,26 @@
             <div class="col-6">
                 <div class="card ">
                     <div class="card-header">
-                        Ganancias de Hoy. {{ganancias[0].fecha | date:'dd-MM-yyyy'}}
+                        <h4 class="mt-1">Ganancias de Hoy. &ensp; <b> {{ganancias[0].fecha | date:'dd-MM-yyyy'}} </b></h4>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table table-striped">
                             <thead class="bg-table">
                                 <tr>
-                                    <th class="col-1">#</th>
-                                    <th class="col-3">Ingresos</th>
-                                    <th class="col-3">Perdidas</th>
-                                    <th class="col-3">Número de Transacciones</th>
-                                    <th class="col-2">Valor neto</th>
+                                    <th scope="col-1">#</th>
+                                    <th scope="col-3">Ingresos</th>
+                                    <th scope="col-3">Perdidas</th>
+                                    <th scope="col-3">Número de Transacciones</th>
+                                    <th scope="col-2">Valor neto</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-table-cell">
                                 <tr>
-                                    <th class="col-1">{{ gananciaHoy.id }}</th>
-                                    <td class="col-3">{{ gananciaHoy.ingresos}}</td>
-                                    <td class="col-3">{{ gananciaHoy.perdidas}}</td>
-                                    <td class="col-3">{{ gananciaHoy.numeroTransacciones}}</td>
-                                    <td class="col-2">{{ gananciaHoy.ingresos - gananciaHoy.perdidas}}</td>
+                                    <th scope="col-1">{{ gananciaHoy.id }}</th>
+                                    <td scope="col-3">{{ gananciaHoy.ingresos | number}}</td>
+                                    <td scope="col-3">{{ gananciaHoy.perdidas | number}}</td>
+                                    <td scope="col-3">{{ gananciaHoy.numeroTransacciones | number}}</td>
+                                    <td scope="col-2">{{ gananciaHoy.ingresos - gananciaHoy.perdidas | number}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -77,24 +77,24 @@
             <div class="col-6">
                 <div class="card ">
                     <div class="card-header">
-                        Ganancias Totales.
+                        <h4 class="mt-1">Ganancias Totales.</h4>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table table-striped">
                             <thead class="bg-table">
                                 <tr>
-                                    <th class="col-2">Usuario</th>
-                                    <th class="col-4">Valor Total</th>
-                                    <th class="col-2">Número de Transacciones</th>
-                                    <th class="col-2">Dias de ganancias</th>
+                                    <th scope="col-2">Usuario</th>
+                                    <th scope="col-4">Valor Total</th>
+                                    <th scope="col-2">Número de Transacciones</th>
+                                    <th scope="col-2">Dias de ganancias</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-table-cell">
                                 <tr>
-                                    <td class="col-2">{{ gananciaTotal.usuario.userName}}</td>
-                                    <td class="col-4">{{ gananciaTotal.valorNeto}}</td>
-                                    <td class="col-2">{{ gananciaTotal.numeroTransacciones}}</td>
-                                    <td class="col-2">{{ gananciaTotal.diasActivo}}</td>
+                                    <td scope="col-2">{{ gananciaTotal.usuario.userName}}</td>
+                                    <td scope="col-4">{{ gananciaTotal.valorNeto | number}}</td>
+                                    <td scope="col-2">{{ gananciaTotal.numeroTransacciones | number}}</td>
+                                    <td scope="col-2">{{ gananciaTotal.diasActivo | number}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -108,11 +108,19 @@
     </div>
     <div class="container-fluid">
         <div class="card">
-            <div class="card-header">
-                Historico ganancias.
+            <div class="card-header header-page">
+                <h3>Historico ganancias.</h3>
+
+                <div>
+                    <label for="selectPage" class="mx-2"> <b>Tamaño de la Tabla</b></label>
+                    <select id="selectPage" class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="pageSize = $event">
+                        <option *ngFor="let option of itemsPag" [value]="option" [selected]="pageSize === option">{{
+                            option }} items por página</option>
+                    </select>
+                </div>
             </div>
             <div class="card-body">
-                <table class="table">
+                <table class="table table-striped">
                     <thead class="bg-table">
                         <tr>
                             <th scope="col">#</th>
@@ -123,16 +131,22 @@
                         </tr>
                     </thead>
                     <tbody class="bg-table-cell">
-                        <tr *ngFor="let item of ganancias; let i = index">
+                        <tr *ngFor="let item of ganancias | paginate: {itemsPerPage: pageSize, currentPage: page} ; let i = index ">
                             <!-- (pagina -1)*tamPag :  ((pagina)*tamPag) -->
-                            <th scope="row">{{ (i+1) }}</th>
+                            <th scope="row">{{ (i+1)+ (page -1)*pageSize }}</th>
                             <td class="word-wrap">{{ userGanancias?.nombres }} {{ userGanancias?.apellidos }}</td>
                             <td> {{ item.fecha | date:'dd-MM-yyyy' }}</td>
-                            <td>{{ item.valorTotal}}</td>
-                            <td>{{ item.gananciaDiariaId.numeroTransacciones}}</td>
+                            <td>{{ item.valorTotal | number}}</td>
+                            <td>{{ item.gananciaDiariaId.numeroTransacciones | number}}</td>
                         </tr>
                     </tbody>
                 </table>
+
+                <div class="center-block">
+                    <pagination-controls class="pag" responsive="true" autoHide="true" previousLabel="Anterior" nextLabel="Siguiente" (pageChange)="page = $event">
+                    </pagination-controls>
+                </div>
+
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@ export class HistoricoGanancias {
     fecha: Date;
     gananciaDiariaId: GananciaDiaria;
     valorTotal: number;
-    userId: User;
+    userId: number;
 
     constructor(){
         this.id= 0;
