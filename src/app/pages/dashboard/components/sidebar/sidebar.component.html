@@ -85,36 +85,28 @@
   >
 </nav> -->
 
-<nav
-  id="sidebarMenu"
-  class="col-md-3 col-lg-2 d-md-block bg-blue-invest sidebar collapse"
->
-  <div class="sidebar-sticky pt-3">
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a
-          class="nav-link active"
-          [routerLink]="['/dashboard/main']"
-          routerLinkActive="active"
-        >
-          <span data-feather="home"></span> Dashboard
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/dashboard/store">
-          <span data-feather="file"></span> Tienda
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/dashboard/red">
-          <span data-feather="shopping-cart"></span> Red
-        </a>
-      </li>
-    </ul>
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-blue-invest sidebar collapse">
+    <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" [routerLink]="['/dashboard/main']" routerLinkActive="active">
+                    <span data-feather="home"></span> Dashboard
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/dashboard/store">
+                    <span data-feather="file"></span> Tienda
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/dashboard/network">
+                    <span data-feather="shopping-cart"></span> Red
+                </a>
+            </li>
+        </ul>
 
-    <h6
-      class="
+        <h6 class="
         sidebar-heading
         d-flex
         justify-content-between
@@ -123,28 +115,19 @@
         mt-4
         mb-1
         text-light
-      "
-    >
-      <span>User Account</span>
-      <a
-        class="d-flex align-items-center text-muted"
-        href="#"
-        aria-label="Add a new report"
-      >
-        <span data-feather="plus-circle"></span>
-      </a>
-    </h6>
-    <ul class="nav flex-column mb-2">
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          [routerLink]="['/dashboard/config']"
-          routerLinkActive="active"
-        >
-          <span data-feather="layers"></span> Configuracion
-        </a>
-      </li>
-      <!-- <li class="nav-item">
+      ">
+            <span>User Account</span>
+            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                <span data-feather="plus-circle"></span>
+            </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/dashboard/config']" routerLinkActive="active">
+                    <span data-feather="layers"></span> Configuracion
+                </a>
+            </li>
+            <!-- <li class="nav-item">
         <a class="nav-link" href="#/dashboard">
           <span data-feather="file-text"></span>
           Last quarter
@@ -162,6 +145,6 @@
           Year-end sale
         </a>
       </li> -->
-    </ul>
-  </div>
+        </ul>
+    </div>
 </nav>

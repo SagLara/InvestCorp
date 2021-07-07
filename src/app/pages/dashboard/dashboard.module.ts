@@ -6,14 +6,17 @@ import { MainComponent } from './main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreComponent } from './store/store.component';
 import { NgxPaginationModule} from 'ngx-pagination';
+import { NetworkComponent } from './network/network.component';
+import { NgxGraphModule } from '@swimlane/ngx-graph';
 @NgModule({
-  declarations: [ConfigComponent, MainComponent, StoreComponent],
+  declarations: [ConfigComponent, MainComponent, StoreComponent, NetworkComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    NgxGraphModule
   ],
   exports:[MainComponent],
   bootstrap:[MainComponent]
