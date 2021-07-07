@@ -1,142 +1,138 @@
-<div class="content-wrapper">
-  <div class="container-fluid">
+<div class="container-fluid">
+  <div class="row">
     <div class="row">
-      <div class="row">
-        <div class="col-5">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="mt-1">
-                Ganancias hoy
-              </h4>
-            </div>
-            <div class="card-body">
-              <table class="table table-striped">
-                <thead class="bg-table">
-                  <tr>
-                    <th scope="col-2"># Pagos</th>
-                    <th scope="col-5">Fecha</th>
-                    <th scope="col-5">USD</th>
-                  </tr>
-                </thead>
-                <tbody class="bg-table-cell">
-                  <tr>
-                    <th scope="col-2">{{ gananciaHoy.id }}</th>
-                    <td scope="col-5">
-                      {{ ganancias[0].fecha | date: "dd-MM-yyyy" }}
-                    </td>
-                    <td scope="col-5">{{ gananciaHoy.ingresos | number }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+      <div class="col-5">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="mt-1">Ganancias hoy</h4>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead class="bg-table">
+                <tr>
+                  <th scope="col-2"># Pagos</th>
+                  <th scope="col-5">Fecha</th>
+                  <th scope="col-5">USD</th>
+                </tr>
+              </thead>
+              <tbody class="bg-table-cell">
+                <tr>
+                  <th scope="col-2">{{ gananciaHoy.id }}</th>
+                  <td scope="col-5">
+                    {{ ganancias[0].fecha | date: "dd-MM-yyyy" }}
+                  </td>
+                  <td scope="col-5">{{ gananciaHoy.ingresos | number }}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div class="col-7">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="mt-1">Ganancias Totales</h4>
-            </div>
-            <div class="card-body">
-              <table class="table table-striped">
-                <thead class="bg-table">
-                  <tr>
-                    <th scope="col-2">Usuario</th>
-                    <th scope="col-4">Valor Total</th>
-                    <th scope="col-2">Número de Transacciones</th>
-                    <th scope="col-2">Dias de ganancias</th>
-                  </tr>
-                </thead>
-                <tbody class="bg-table-cell">
-                  <tr>
-                    <td scope="col-2">{{ gananciaTotal.usuario.userName }}</td>
-                    <td scope="col-4">
-                      {{ gananciaTotal.valorNeto | number }}
-                    </td>
-                    <td scope="col-2">
-                      {{ gananciaTotal.numeroTransacciones | number }}
-                    </td>
-                    <td scope="col-2">
-                      {{ gananciaTotal.diasActivo | number }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+      </div>
+      <div class="col-7">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="mt-1">Ganancias Totales</h4>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead class="bg-table">
+                <tr>
+                  <th scope="col-2">Usuario</th>
+                  <th scope="col-4">Valor Total</th>
+                  <th scope="col-2">Número de Transacciones</th>
+                  <th scope="col-2">Dias de ganancias</th>
+                </tr>
+              </thead>
+              <tbody class="bg-table-cell">
+                <tr>
+                  <td scope="col-2">{{ gananciaTotal.usuario.userName }}</td>
+                  <td scope="col-4">
+                    {{ gananciaTotal.valorNeto | number }}
+                  </td>
+                  <td scope="col-2">
+                    {{ gananciaTotal.numeroTransacciones | number }}
+                  </td>
+                  <td scope="col-2">
+                    {{ gananciaTotal.diasActivo | number }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
-    <div class="container-fluid"></div>
-    <div class="container-fluid">
-      <div class="card">
-        <div class="card-header header-page">
-          <h3>Historico ganancias.</h3>
+  </div>
+  <div class="container-fluid"></div>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header header-page">
+        <h3>Historico ganancias.</h3>
 
-          <div>
-            <label for="selectPage" class="mx-2">
-              <b>Tamaño de la Tabla</b></label
+        <div>
+          <label for="selectPage" class="mx-2">
+            <b>Tamaño de la Tabla</b></label
+          >
+          <select
+            id="selectPage"
+            class="custom-select"
+            style="width: auto"
+            [(ngModel)]="pageSize"
+            (ngModelChange)="pageSize = $event"
+          >
+            <option
+              *ngFor="let option of itemsPag"
+              [value]="option"
+              [selected]="pageSize === option"
             >
-            <select
-              id="selectPage"
-              class="custom-select"
-              style="width: auto"
-              [(ngModel)]="pageSize"
-              (ngModelChange)="pageSize = $event"
-            >
-              <option
-                *ngFor="let option of itemsPag"
-                [value]="option"
-                [selected]="pageSize === option"
-              >
-                {{ option }} items por página
-              </option>
-            </select>
-          </div>
+              {{ option }} items por página
+            </option>
+          </select>
         </div>
-        <div class="card-body">
-          <table class="table table-striped">
-            <thead class="bg-table">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Valor Neto</th>
-                <th scope="col">Número de Transacciones</th>
-              </tr>
-            </thead>
-            <tbody class="bg-table-cell">
-              <tr
-                *ngFor="
-                  let item of ganancias
-                    | paginate: { itemsPerPage: pageSize, currentPage: page };
-                  let i = index
-                "
-              >
-                <!-- (pagina -1)*tamPag :  ((pagina)*tamPag) -->
-                <th scope="row">{{ i + 1 + (page - 1) * pageSize }}</th>
-                <td class="word-wrap">
-                  {{ userGanancias?.nombres }} {{ userGanancias?.apellidos }}
-                </td>
-                <td>{{ item.fecha | date: "dd-MM-yyyy" }}</td>
-                <td>{{ item.valorTotal | number }}</td>
-                <td>
-                  {{ item.gananciaDiariaId.numeroTransacciones | number }}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="center-block">
-            <pagination-controls
-              class="pag"
-              responsive="true"
-              autoHide="true"
-              previousLabel="Anterior"
-              nextLabel="Siguiente"
-              (pageChange)="page = $event"
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead class="bg-table">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Valor Neto</th>
+              <th scope="col">Número de Transacciones</th>
+            </tr>
+          </thead>
+          <tbody class="bg-table-cell">
+            <tr
+              *ngFor="
+                let item of ganancias
+                  | paginate: { itemsPerPage: pageSize, currentPage: page };
+                let i = index
+              "
             >
-            </pagination-controls>
-          </div>
+              <!-- (pagina -1)*tamPag :  ((pagina)*tamPag) -->
+              <th scope="row">{{ i + 1 + (page - 1) * pageSize }}</th>
+              <td class="word-wrap">
+                {{ userGanancias?.nombres }} {{ userGanancias?.apellidos }}
+              </td>
+              <td>{{ item.fecha | date: "dd-MM-yyyy" }}</td>
+              <td>{{ item.valorTotal | number }}</td>
+              <td>
+                {{ item.gananciaDiariaId.numeroTransacciones | number }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="center-block">
+          <pagination-controls
+            class="pag"
+            responsive="true"
+            autoHide="true"
+            previousLabel="Anterior"
+            nextLabel="Siguiente"
+            (pageChange)="page = $event"
+          >
+          </pagination-controls>
         </div>
       </div>
     </div>
