@@ -1,71 +1,68 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="row">
-      <div class="col-5">
-        <div class="card">
-          <div class="card-header">
-            <h4 class="mt-1">Ganancias hoy</h4>
-          </div>
-          <div class="card-body">
-            <table class="table table-striped">
-              <thead class="bg-table">
-                <tr>
-                  <th scope="col-2"># Pagos</th>
-                  <th scope="col-5">Fecha</th>
-                  <th scope="col-5">USD</th>
-                </tr>
-              </thead>
-              <tbody class="bg-table-cell">
-                <tr>
-                  <th scope="col-2">{{ gananciaHoy.id }}</th>
-                  <td scope="col-5">
-                    {{ ganancias[0].fecha | date: "dd-MM-yyyy" }}
-                  </td>
-                  <td scope="col-5">{{ gananciaHoy.ingresos | number }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-5 pl-0">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="mt-1">Ganancias hoy</h4>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead class="bg-table">
+              <tr>
+                <th scope="col-2"># Pagos</th>
+                <th scope="col-5">Fecha</th>
+                <th scope="col-5">USD</th>
+              </tr>
+            </thead>
+            <tbody class="bg-table-cell">
+              <tr>
+                <th scope="col-2">{{ gananciaHoy.id }}</th>
+                <td scope="col-5">
+                  {{ ganancias[0].fecha | date: "dd-MM-yyyy" }}
+                </td>
+                <td scope="col-5">{{ gananciaHoy.ingresos | number }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      <div class="col-7">
-        <div class="card">
-          <div class="card-header">
-            <h4 class="mt-1">Ganancias Totales</h4>
-          </div>
-          <div class="card-body">
-            <table class="table table-striped">
-              <thead class="bg-table">
-                <tr>
-                  <th scope="col-2">Usuario</th>
-                  <th scope="col-4">Valor Total</th>
-                  <th scope="col-2">Número de Transacciones</th>
-                  <th scope="col-2">Dias de ganancias</th>
-                </tr>
-              </thead>
-              <tbody class="bg-table-cell">
-                <tr>
-                  <td scope="col-2">{{ gananciaTotal.usuario.userName }}</td>
-                  <td scope="col-4">
-                    {{ gananciaTotal.valorNeto | number }}
-                  </td>
-                  <td scope="col-2">
-                    {{ gananciaTotal.numeroTransacciones | number }}
-                  </td>
-                  <td scope="col-2">
-                    {{ gananciaTotal.diasActivo | number }}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+    </div>
+    <div class="col-7 pr-0">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="mt-1">Ganancias Totales</h4>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead class="bg-table">
+              <tr>
+                <th scope="col-2">Usuario</th>
+                <th scope="col-4">Valor Total</th>
+                <th scope="col-2">Número de Transacciones</th>
+                <th scope="col-2">Dias de ganancias</th>
+              </tr>
+            </thead>
+            <tbody class="bg-table-cell">
+              <tr>
+                <td scope="col-2">{{ gananciaTotal.usuario.userName }}</td>
+                <td scope="col-4">
+                  {{ gananciaTotal.valorNeto | number }}
+                </td>
+                <td scope="col-2">
+                  {{ gananciaTotal.numeroTransacciones | number }}
+                </td>
+                <td scope="col-2">
+                  {{ gananciaTotal.diasActivo | number }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
-  <div class="container-fluid"></div>
-  <div class="container-fluid">
-    <div class="card">
+  <div class="row mt-3">
+    <div class="card col-12">
       <div class="card-header header-page">
         <h3>Historico ganancias.</h3>
 
