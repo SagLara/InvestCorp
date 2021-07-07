@@ -5,6 +5,7 @@ import { ConfigComponent } from './config/config.component';
 import { DashboardComponent } from './dashboard.component';
 import { MainComponent } from './main/main.component';
 import { StoreComponent } from './store/store.component';
+import { NetworkComponent } from './network/network.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,10 @@ const routes: Routes = [
       {
         path: 'store', 
         component: StoreComponent,
+      },
+      {
+        path: 'network', 
+        component: NetworkComponent,
       },
     ],
     

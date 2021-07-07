@@ -13,7 +13,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NavbarComponent } from './pages/dashboard/components/navbar/navbar.component';
 import { SidebarComponent } from './pages/dashboard/components/sidebar/sidebar.component';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +31,7 @@ import { DashboardModule } from './pages/dashboard/dashboard.module';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
