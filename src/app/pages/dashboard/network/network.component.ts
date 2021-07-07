@@ -105,7 +105,7 @@ export class NetworkComponent implements OnInit {
     }
   }
 
-  public getStyles(node: Node): any {
+   public getStyles(node: Node): any {
     return {
       'background-color': node.data.backgroundColor,
     };
