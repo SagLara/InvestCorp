@@ -7,16 +7,14 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  menuExpand: boolean = environment.DROP_MENU;
 
-  menuExpand:boolean=environment.DROP_MENU;
-
-  constructor(private router : Router, private apiService: ApiService) { }
+  constructor(private router: Router, private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.menuExpand=environment.DROP_MENU;
+    this.menuExpand = environment.DROP_MENU;
   }
-
 }
