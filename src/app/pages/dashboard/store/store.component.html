@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 my-2">
       <div class="card text-left">
-        <div class="card-header">Producto 0</div>
+        <div class="card-header">{{ productos[0]?.nombre }}</div>
         <div class="row">
           <div class="card-body col-8 text-center d-flex flex-column">
             <h4 class="card-title m-2">
@@ -10,7 +10,7 @@
             </h4>
             <div class="text-center">
               <img
-                src="{{ productos[0].urlImagen }}"
+                src="{{ productos[0].urlIcono }}"
                 width="300px"
                 height="200px"
                 alt="Imagen Producto"
@@ -23,12 +23,11 @@
             <p class="card-text mt-1">
               {{ productos[0]?.descripcion }}
             </p>
-            <!-- <a href="#/dashboard/store" class="btn btn-primary m-3 mt-auto align-self-center">Go somewhere</a> -->
           </div>
           <div class="col-4 text-center">
             <img
               class="mt-2"
-              src="/assets/images/dummy_qr_bitcoin_delete.png"
+              src="{{ productos[0].urlQr }}"
               alt="QR Code"
             />
             <h6><b>Billetera:</b></h6>
