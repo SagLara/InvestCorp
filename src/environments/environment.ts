@@ -7,6 +7,7 @@ export const environment = {
   DROP_MENU: false,
   baseUrl: 'http://localhost:3000',
   USER_SERVICE: 'http://localhost:3000/login',
+  PRODUCT_SERVICE: 'http://localhost:3000/producto',
 };
 
 /*
