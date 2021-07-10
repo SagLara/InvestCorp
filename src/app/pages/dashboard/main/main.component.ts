@@ -93,18 +93,18 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.gananciaHoy = new GananciaDiaria();
     this.userGanancias = new User();
     this.gananciaTotal = new GananciaTotal();
+    this.gananciaHoy = new GananciaDiaria();
     for (let i = 1; i < 10; i++) {
       let historico: HistoricoGanancias = new HistoricoGanancias();
       let ganancia: GananciaDiaria = new GananciaDiaria();
       let fecha = '2021-06-' + (30 - i);
 
-      ganancia.id = this.gananciaHoy.id + i;
-      ganancia.ingresos = this.gananciaHoy.ingresos * i;
-      ganancia.perdidas = this.gananciaHoy.perdidas * i;
-      ganancia.numeroTransacciones = this.gananciaHoy.numeroTransacciones + i;
+      ganancia.id = 8 + i;
+      ganancia.ingresos = 255000 * i;
+      ganancia.perdidas = 130000 * i;
+      ganancia.numeroTransacciones = 3 + i;
 
       historico.gananciaDiariaId = ganancia;
       historico.userId = this.userGanancias.id;
@@ -128,12 +128,12 @@ export class MainComponent implements OnInit {
         if(res!=undefined && res!=null){
           /** La idea es que retorne el array de productos en formato json*/
           this.historicoData=res;
-          let gananciaDiaria: GananciaDiaria = new GananciaDiaria();
+          this.gananciaHoy = new GananciaDiaria();
           let gananciaTotalData: GananciaTotal;
 
           //Comparar Fechas, la idea es mostrar la ganancia del dia actual
           if(this.fechaActual==this.historicoData[0].fecha){
-            gananciaDiaria=this.historicoData[0].gananciaDiariaId;
+            this.gananciaHoy=this.historicoData[0].gananciaDiariaId;
           }  
     
           for (let i = 0; i < this.historicoData.length; i++) {
