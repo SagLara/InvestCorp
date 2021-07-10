@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Edge, Node, Layout } from '@swimlane/ngx-graph';
 import { DagreNodesOnlyLayout } from './customDagreNodesOnly';
 import * as shape from 'd3-shape';
+import { NetworkService } from 'src/app/services/network.service';
 
 export class Employee {
   id: string;
@@ -28,7 +29,9 @@ export class NetworkComponent implements OnInit {
   public curve: any = shape.curveLinear;
   public layout: Layout = new DagreNodesOnlyLayout();
 
-  constructor() {
+  public employeesData=[];
+
+  constructor(private networkService:NetworkService) {
     this.employees = [
       {
         id: '1',
@@ -105,9 +108,21 @@ export class NetworkComponent implements OnInit {
     }
   }
 
-   public getStyles(node: Node): any {
+  public getStyles(node: Node): any {
     return {
       'background-color': node.data.backgroundColor,
     };
+  }
+
+  getEmployees() {
+    this.networkService.get("/api/getAll").subscribe(
+      (res)=>{
+        if(res!=undefined && res!=null){
+          /** La idea es que retorne el array de empleados en formato json*/
+          this.employeesData=res
+        }
+      },(error)=>{
+        console.log(error);
+      });
   }
 }

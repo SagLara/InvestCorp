@@ -93,6 +93,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    /** Se supone que con el back, esto practicamente no iria :v */
     this.userGanancias = new User();
     this.gananciaTotal = new GananciaTotal();
     this.gananciaHoy = new GananciaDiaria();

@@ -23,18 +23,18 @@ export class StoreComponent implements OnInit {
     producto2.urlIcono =
       '/assets/images/icono_producto_educacion_investcorp.png';
     producto2.urlQr = '/assets/images/dummy_qr_bitcoin_delete.png';
-    producto2.valor = 30;
+    producto2.valor = 25;
     producto2.direccionBilletera = 'Tasd2aTW3qH43MghkI24OASD3CvXC22WVASD';
 
     let producto3 = new Producto();
-    producto3.id = 1;
+    producto3.id = 2;
     producto3.nombre = 'Suscripción InvestCorp2';
     producto3.descripcion =
       'Suscripcion mensual para adquirir todos los beneficios de InvestCorp';
     producto3.urlIcono =
       '/assets/images/icono_producto_inversion_investcorp.png';
     producto3.urlQr = '/assets/images/dummy_qr_bitcoin_delete.png';
-    producto3.valor = 30;
+    producto3.valor = 35;
     producto3.direccionBilletera = 'Tasd2aTW3qH43MghkI24OASD3CvXC22WVASD';
     this.productos.push(producto2);
     this.productos.push(producto3);
