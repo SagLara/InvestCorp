@@ -11,7 +11,7 @@ import { NetworkComponent } from './network/network.component';
 const routes: Routes = [
   
   {
-    path : 'dashboard', 
+    path : 'dashboard',
     component: DashboardComponent,
     //canActivate: [AuthGuard],
     children: [
@@ -31,9 +31,15 @@ const routes: Routes = [
         path: 'network', 
         component: NetworkComponent,
       },
+      { 
+        path : '', 
+        pathMatch:'full', 
+        redirectTo: 'main'
+      },
     ],
     
   },
+  
   
 
 ];
