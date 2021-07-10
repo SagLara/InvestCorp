@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user.model';
 import { ApiService } from 'src/app/services/api.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
@@ -15,6 +16,8 @@ export class ConfigComponent implements OnInit {
   flagPass: boolean = false;
   formProfile: FormGroup;
   formPassword: FormGroup;
+
+  userData:User=null;
 
   userInfo = {
     id: 36,
@@ -39,9 +42,23 @@ export class ConfigComponent implements OnInit {
     private router: Router,
     private apiService: ApiService,
     private userService: UserService
-  ) {}
+  ) {
+    this.apiService.getUser().then(
+      (res)=>{
+        if(res!=null && res!=undefined){
+          this.userData=res;
+          console.log(this.userData);
+        }
+      }
+    ).catch((error)=>{
+      console.error(error);
+    });
+  }
 
   ngOnInit(): void {
+    /** Cuando funcione traer la info del back que esta en UserData
+     *  se debe reemplazar "UserInfo" por "UserData"
+     */
     this.formProfile = new FormGroup({
       nombres: new FormControl(this.userInfo.nombres),
       apellidos: new FormControl(this.userInfo.apellidos),
@@ -98,8 +115,7 @@ export class ConfigComponent implements OnInit {
           });
         } else {
           const editRegistro = this.formProfile.value;
-          this.userService
-            .put('/api/registro', editRegistro, this.userInfo.id)
+          this.userService.put('/api/registro', editRegistro, this.userInfo.id)
             .subscribe((res: any) => {
               console.log(res);
               Swal.fire(
@@ -115,6 +131,15 @@ export class ConfigComponent implements OnInit {
   }
 
   updatePass() {
+    let passData=this.formPassword.value;
+    /*Lo que llega:
+
+      passActual ,
+      newPass,
+      validNewPass, 
+    */
+   console.log(passData);
+   
     if (!this.formPassword.valid) {
       Swal.fire({
         icon: 'error',
@@ -124,11 +149,17 @@ export class ConfigComponent implements OnInit {
         timer: 2000,
       });
     } else {
-      Swal.fire(
-        'Contraseña Actualizada!',
-        'Su contraseña se reestablecio correctamente.',
-        'success'
-      );
+      ///api/changePass', passData, this.userData.id (El id del usuario cargado)
+      this.userService.put('/api/changePass', passData, this.userInfo.id)
+      .subscribe((res: any) => {
+        console.log(res);
+        Swal.fire(
+          'Contraseña Actualizada!',
+          'Su contraseña se reestablecio correctamente.',
+          'success'
+        );
+      });
+      
       this.flagPass = false;
     }
   }

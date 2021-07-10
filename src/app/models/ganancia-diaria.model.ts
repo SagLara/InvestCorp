@@ -6,9 +6,9 @@ export class GananciaDiaria {
     numeroTransacciones: number;
 
     constructor(){
-        this.id= 8;
-        this.ingresos= 500000;
-        this.perdidas= 124000;
-        this.numeroTransacciones= 6;
+        this.id= 0;
+        this.ingresos= 0;
+        this.perdidas= 0;
+        this.numeroTransacciones= 0;
     }
 }

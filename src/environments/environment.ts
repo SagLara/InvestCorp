@@ -8,6 +8,7 @@ export const environment = {
   baseUrl: 'http://localhost:3000',
   USER_SERVICE: 'http://localhost:3000/login',
   PRODUCT_SERVICE: 'http://localhost:3000/producto',
+  GANANCIAS_SERVICE: 'http://localhost:3000/ganancias',
 };
 
 /*

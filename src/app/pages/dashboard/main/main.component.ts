@@ -9,9 +9,12 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { GananciaTotal } from 'src/app/models/ganancia-total.model';
+import { GananciasService } from 'src/app/services/ganancias.service';
 import { GananciaDiaria } from '../../../models/ganancia-diaria.model';
 import { HistoricoGanancias } from '../../../models/historico-ganancias.model';
 import { User } from '../../../models/user.model';
+import { element } from 'protractor';
+import { ApiService } from 'src/app/services/api.service';
 
 const GANANCIAS: HistoricoGanancias[] = [
   {
@@ -63,12 +66,31 @@ export class MainComponent implements OnInit {
   userGanancias: User;
   ganancias: HistoricoGanancias[] = [];
 
+  historicoData: HistoricoGanancias[] = [];
+
+  fechaActual= new Date(Date.now());
+
   itemsPag: number[] = [2, 4, 5, 10, 15, 25, 50, 75, 100];
   page = 1;
   pageSize = 4;
   collectionSize = GANANCIAS.length;
 
-  constructor() {}
+  constructor
+  ( private gananciasService:GananciasService, 
+    private apiService: ApiService,) 
+  {
+    //Carga la información del usuario
+    this.apiService.getUser().then(
+      (res)=>{
+        if(res!=null && res!=undefined){
+          this.userGanancias=res;
+          console.log(this.userGanancias);
+        }
+      }
+    ).catch((error)=>{
+      console.error(error);
+    });
+  }
 
   ngOnInit(): void {
     this.gananciaHoy = new GananciaDiaria();
@@ -97,5 +119,35 @@ export class MainComponent implements OnInit {
     }
     this.gananciaTotal.diasActivo = this.ganancias.length;
     this.gananciaTotal.usuario = this.userGanancias;
+  }
+
+  getHistoricoGanancias(){
+    //En este caso no se pasa el id del historico si no del usuario para hacer la busqueda desde ahí
+    this.gananciasService.get("/api/historico"+this.userGanancias.id).subscribe(
+      (res)=>{
+        if(res!=undefined && res!=null){
+          /** La idea es que retorne el array de productos en formato json*/
+          this.historicoData=res;
+          let gananciaDiaria: GananciaDiaria = new GananciaDiaria();
+          let gananciaTotalData: GananciaTotal;
+
+          //Comparar Fechas, la idea es mostrar la ganancia del dia actual
+          if(this.fechaActual==this.historicoData[0].fecha){
+            gananciaDiaria=this.historicoData[0].gananciaDiariaId;
+          }  
+    
+          for (let i = 0; i < this.historicoData.length; i++) {
+            let element = this.historicoData[i];
+
+            gananciaTotalData.valorNeto += element.valorTotal;
+            gananciaTotalData.numeroTransacciones += element.gananciaDiariaId.numeroTransacciones;
+
+          }
+          this.gananciaTotal.diasActivo = this.historicoData.length;
+          this.gananciaTotal.usuario = this.userGanancias;
+        }
+      },(error)=>{
+        console.log(error);
+      });
   }
 }
